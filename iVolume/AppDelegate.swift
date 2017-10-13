@@ -19,11 +19,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private var mqtt: CocoaMQTT!
     
+    static let UserDefaultsKeyIsActive = "isActive";
+    
     fileprivate var isActive = true {
         didSet {
             self.toggleMenuItem.title = (self.isActive ? "Disable" : "Enable")
             self.statusItem!.image = NSImage(named: self.isActive ? "On" : "Off")!
             self.statusItem!.image!.size = NSSize(width: 16.0, height: 16.0)
+            
+            UserDefaults.standard.set(self.isActive, forKey: AppDelegate.UserDefaultsKeyIsActive)
         }
     }
     
@@ -34,7 +38,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.statusItem!.highlightMode = true
         self.statusItem!.menu = self.menu
         
-        self.isActive = true
+        let savedIsActive = UserDefaults.standard.bool(forKey: AppDelegate.UserDefaultsKeyIsActive)
+        self.isActive = savedIsActive
         
         let clientID = "iVolume-" + String(ProcessInfo().processIdentifier)
         self.mqtt = CocoaMQTT(clientID: clientID, host: "cloud.ljh.me", port: 1883)
