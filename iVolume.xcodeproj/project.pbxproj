@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		224C7530ED058B3BAC85FBEA /* Pods_iVolume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5058C973799E727DAD397E9A /* Pods_iVolume.framework */; };
 		972B15E11F90B14D00F3D645 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972B15E01F90B14D00F3D645 /* AppDelegate.swift */; };
 		972B15E31F90B14D00F3D645 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972B15E21F90B14D00F3D645 /* ViewController.swift */; };
 		972B15E51F90B14D00F3D645 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 972B15E41F90B14D00F3D645 /* Assets.xcassets */; };
@@ -14,6 +15,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		104DFC83E30E84AB57EDDFC4 /* Pods-iVolume.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iVolume.release.xcconfig"; path = "Pods/Target Support Files/Pods-iVolume/Pods-iVolume.release.xcconfig"; sourceTree = "<group>"; };
+		5058C973799E727DAD397E9A /* Pods_iVolume.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iVolume.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67D7123BCF450E9C980A20FF /* Pods-iVolume.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iVolume.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iVolume/Pods-iVolume.debug.xcconfig"; sourceTree = "<group>"; };
 		972B15DD1F90B14D00F3D645 /* iVolume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iVolume.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		972B15E01F90B14D00F3D645 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		972B15E21F90B14D00F3D645 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,17 +31,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				224C7530ED058B3BAC85FBEA /* Pods_iVolume.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2532B383F3BB089287CF67EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				67D7123BCF450E9C980A20FF /* Pods-iVolume.debug.xcconfig */,
+				104DFC83E30E84AB57EDDFC4 /* Pods-iVolume.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		972B15D41F90B14D00F3D645 = {
 			isa = PBXGroup;
 			children = (
 				972B15DF1F90B14D00F3D645 /* iVolume */,
 				972B15DE1F90B14D00F3D645 /* Products */,
+				2532B383F3BB089287CF67EC /* Pods */,
+				C67E02370E3EA9586AE2726A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +77,14 @@
 			path = iVolume;
 			sourceTree = "<group>";
 		};
+		C67E02370E3EA9586AE2726A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5058C973799E727DAD397E9A /* Pods_iVolume.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -68,9 +92,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 972B15EC1F90B14D00F3D645 /* Build configuration list for PBXNativeTarget "iVolume" */;
 			buildPhases = (
+				9446E8BE6B750498C1586494 /* [CP] Check Pods Manifest.lock */,
 				972B15D91F90B14D00F3D645 /* Sources */,
 				972B15DA1F90B14D00F3D645 /* Frameworks */,
 				972B15DB1F90B14D00F3D645 /* Resources */,
+				B5490FCE8E2A5105C018255C /* [CP] Embed Pods Frameworks */,
+				16AA68C70F27802055E027AB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -127,6 +154,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16AA68C70F27802055E027AB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iVolume/Pods-iVolume-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9446E8BE6B750498C1586494 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B5490FCE8E2A5105C018255C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iVolume/Pods-iVolume-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		972B15D91F90B14D00F3D645 /* Sources */ = {
@@ -246,6 +321,7 @@
 		};
 		972B15ED1F90B14D00F3D645 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67D7123BCF450E9C980A20FF /* Pods-iVolume.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -260,6 +336,7 @@
 		};
 		972B15EE1F90B14D00F3D645 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 104DFC83E30E84AB57EDDFC4 /* Pods-iVolume.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
