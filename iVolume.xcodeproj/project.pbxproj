@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		224C7530ED058B3BAC85FBEA /* Pods_iVolume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5058C973799E727DAD397E9A /* Pods_iVolume.framework */; };
+		97010F261F90B9DD002EA54A /* ISSoundAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 97010F251F90B9DD002EA54A /* ISSoundAdditions.m */; };
 		972B15E11F90B14D00F3D645 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972B15E01F90B14D00F3D645 /* AppDelegate.swift */; };
 		972B15E31F90B14D00F3D645 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972B15E21F90B14D00F3D645 /* ViewController.swift */; };
 		972B15E51F90B14D00F3D645 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 972B15E41F90B14D00F3D645 /* Assets.xcassets */; };
@@ -18,6 +19,9 @@
 		104DFC83E30E84AB57EDDFC4 /* Pods-iVolume.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iVolume.release.xcconfig"; path = "Pods/Target Support Files/Pods-iVolume/Pods-iVolume.release.xcconfig"; sourceTree = "<group>"; };
 		5058C973799E727DAD397E9A /* Pods_iVolume.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iVolume.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67D7123BCF450E9C980A20FF /* Pods-iVolume.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iVolume.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iVolume/Pods-iVolume.debug.xcconfig"; sourceTree = "<group>"; };
+		97010F231F90B9DD002EA54A /* iVolume-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iVolume-Bridging-Header.h"; sourceTree = "<group>"; };
+		97010F241F90B9DD002EA54A /* ISSoundAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISSoundAdditions.h; sourceTree = "<group>"; };
+		97010F251F90B9DD002EA54A /* ISSoundAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISSoundAdditions.m; sourceTree = "<group>"; };
 		972B15DD1F90B14D00F3D645 /* iVolume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iVolume.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		972B15E01F90B14D00F3D645 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		972B15E21F90B14D00F3D645 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,11 +72,14 @@
 		972B15DF1F90B14D00F3D645 /* iVolume */ = {
 			isa = PBXGroup;
 			children = (
+				97010F241F90B9DD002EA54A /* ISSoundAdditions.h */,
+				97010F251F90B9DD002EA54A /* ISSoundAdditions.m */,
 				972B15E01F90B14D00F3D645 /* AppDelegate.swift */,
 				972B15E21F90B14D00F3D645 /* ViewController.swift */,
 				972B15E41F90B14D00F3D645 /* Assets.xcassets */,
 				972B15E61F90B14D00F3D645 /* Main.storyboard */,
 				972B15E91F90B14D00F3D645 /* Info.plist */,
+				97010F231F90B9DD002EA54A /* iVolume-Bridging-Header.h */,
 			);
 			path = iVolume;
 			sourceTree = "<group>";
@@ -121,6 +128,7 @@
 					972B15DC1F90B14D00F3D645 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = W5L5FV674S;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -210,6 +218,7 @@
 			files = (
 				972B15E31F90B14D00F3D645 /* ViewController.swift in Sources */,
 				972B15E11F90B14D00F3D645 /* AppDelegate.swift in Sources */,
+				97010F261F90B9DD002EA54A /* ISSoundAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,12 +333,15 @@
 			baseConfigurationReference = 67D7123BCF450E9C980A20FF /* Pods-iVolume.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = W5L5FV674S;
 				INFOPLIST_FILE = iVolume/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.ljh.iVolume;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iVolume/iVolume-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -339,12 +351,14 @@
 			baseConfigurationReference = 104DFC83E30E84AB57EDDFC4 /* Pods-iVolume.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = W5L5FV674S;
 				INFOPLIST_FILE = iVolume/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.ljh.iVolume;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iVolume/iVolume-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -368,6 +382,7 @@
 				972B15EE1F90B14D00F3D645 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
