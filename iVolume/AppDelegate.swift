@@ -22,16 +22,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     fileprivate var isActive = true {
         didSet {
             self.toggleMenuItem.title = (self.isActive ? "Disable" : "Enable")
+            self.statusItem!.image = NSImage(named: self.isActive ? "On" : "Off")!
+            self.statusItem!.image!.size = NSSize(width: 16.0, height: 16.0)
         }
     }
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         self.statusItem = NSStatusBar.system().statusItem(withLength: -1)
         
-        self.statusItem!.title = "iVolume"
-        self.statusItem!.length = 70
+        self.statusItem!.length = 24
         self.statusItem!.highlightMode = true
         self.statusItem!.menu = self.menu
+        
+        self.isActive = true
         
         let clientID = "iVolume-" + String(ProcessInfo().processIdentifier)
         self.mqtt = CocoaMQTT(clientID: clientID, host: "cloud.ljh.me", port: 1883)
